@@ -1,0 +1,26 @@
+
+
+const mealTypes = [
+    "Keto",
+    "Paleo",
+    "Atkins",
+    "Vegan",
+    "Vegetarian",
+    "Low Carb",
+];
+
+
+const meals per day{
+    const mealTypes = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+];
+}
+
+es({totalCalories}){

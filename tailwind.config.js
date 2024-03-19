@@ -9,7 +9,12 @@ module.exports = {
     extend: {
       backgroundImage: {
  
+
       },
+      colors:{
+        'background': "var(--background-color)",
+        'text': "var(--text-color)"
+      }
     },
   },
   plugins: [],
