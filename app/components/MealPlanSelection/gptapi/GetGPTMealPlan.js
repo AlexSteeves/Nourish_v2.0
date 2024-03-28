@@ -1,6 +1,7 @@
 
 import axios from 'axios'
 import { useSelector } from 'react-redux';
+import { gql, useQuery } from '@apollo/client';
 
 export const handleGeneratePrompt = async (dietType, mealsPerDay, caloriesPerDay, allergys) => {
 
@@ -42,5 +43,23 @@ export const handleGeneratePrompt = async (dietType, mealsPerDay, caloriesPerDay
     } 
 
 };
+
+
+const GET_OPENAI_RESPONSE = gql`
+  query GetOpenAiResponse($prompt: String!) {
+    openAiResponse(prompt: $prompt)
+  }
+`;
+
+export function MyComponent() {
+  const { loading, error, data } = useQuery(GET_OPENAI_RESPONSE, {
+    variables: { prompt: "Hello, world!" },
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  return <div>Response: {data.openAiResponse}</div>;
+}
 
 

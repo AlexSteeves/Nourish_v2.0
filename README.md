@@ -16,8 +16,10 @@ npm i framer-motion
 npm i axios
 npm i react-remove-scroll-bar
 npm install @supabase/supabase-js @supabase/ssr
-
+npm install @apollo/client graphql
 npm install @reduxjs/toolkit react-redux
+npm install apollo-server express graphql axios
+
 
  https://mui.com/base-ui/react-input/#common-examples
  https://www.realtimecolors.com/?colors=ffffff-082016-97d7be-2b3e6f-5048b8&fonts=Poppins-Poppins

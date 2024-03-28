@@ -7,6 +7,9 @@ import AllergySelector from "./SelectionComponents/AllergySelector.jsx";
 import { useState } from "react";
 import { setMenu } from '../../../lib/slices/menuSlice.js'
 import MealPlanParser from './MealPlanParser'
+import { MyComponent } from "./gptapi/GetGPTMealPlan.js";
+
+
 import Link from 'next/link'
 import { handleGeneratePrompt } from "./gptapi/GetGPTMealPlan.js";
 import { useSelector, useDispatch} from 'react-redux';
@@ -27,6 +30,13 @@ export default function Page() {
     dispatch(setMenu(await handleGeneratePrompt(dietType, mealsPerDay, caloriesPerDay, allergys)));
     setIsLoading('false');
   }
+
+  const graphMealPlan = async () => {
+    
+    setIsLoading('true');
+    dispatch(setMenu(MyComponent()));
+    setIsLoading('false');
+  }
   return (
 
     <div className="min-h-screen w-full flex flex-col md:flex-row p-12 gap-4">
@@ -38,7 +48,7 @@ export default function Page() {
             <MealsPerDay />
             <CalorieSelector />
             <AllergySelector />
-            <button onClick={GetGPTMealPlan}>Select</button>
+            <button onClick={graphMealPlan}>Select</button>
             <span>{isLoading}</span>
         </div>
     </div>
