@@ -6,7 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {setDietType} from '../../../../lib/slices/dietTypeSlice'
 
@@ -18,6 +18,9 @@ export default function DietType() {
   const handleChange = (event) => {
     dispatch(setDietType(event.target.value));
   };
+  useEffect(()=>{
+    dispatch(setDietType("Keto"));
+  },[])
 
   return (
     <Box sx={{ minWidth: 120 }}>
@@ -29,6 +32,7 @@ export default function DietType() {
           value={dietType}
           label="Diet Type"
           onChange={handleChange}
+         
         >
   
           {
