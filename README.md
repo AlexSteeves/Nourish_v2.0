@@ -10,6 +10,4 @@ A meal plan generating software that leverages the power of gpt3.5-turbo to crea
 - GPT3.5-Turbo - OpenAI API to generate meal plan
 - Supabase - User Auth and noSQL Database
 
-### Update:
-Nourish is currently undergoing a visual redesign as I moved from React.js to Next.js. 
-It is hosted at https://asteevesprojects.dev/
+
